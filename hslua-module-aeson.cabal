@@ -1,0 +1,29 @@
+name:                hslua-module-aeson
+version:             0.1.0
+synopsis:            Lua wrapper around Aeson.
+description:         Allow to encode and decode Lua values from and to JSON.
+homepage:            https://github.com/hslua/hslua-module-aeson
+license:             MIT
+license-file:        LICENSE
+author:              Albert Krewinkel
+maintainer:          albert+hslua@zeitkraut.de
+copyright:           Albert Krewinkel <albert+hslua@zeitkraut.de>
+category:            Foreign
+build-type:          Simple
+extra-source-files:  CHANGELOG.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.0.2, GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5
+
+source-repository head
+  type:              git
+  location:          https://github.com/hslua/hslua-module-aeson.git
+
+library
+  build-depends:       base        >= 4.9    && < 5
+                     , aeson       >= 0.11   && < 1.5
+                     , hslua       >= 1.0.3  && < 1.2
+                     , hslua-aeson >= 1.0.0  && < 1.1
+  exposed-modules:     Foreign.Lua.Module.Aeson
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall
