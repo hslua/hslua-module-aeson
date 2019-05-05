@@ -31,12 +31,14 @@ pushModule = do
   Lua.addfunction "decode" decode
   Lua.addfunction "encode" encode
   return 1
+{-# INLINABLE pushModule #-}
 
 -- | Decode a JSON string to Lua values.
 decode :: ByteString -> Lua (Optional Aeson.Value)
 decode = return . Optional . Aeson.decode
+{-# INLINABLE decode #-}
 
 -- | Encode a Lua value as JSON.
 encode :: Aeson.Value -> Lua ByteString
 encode = return . Aeson.encode
-
+{-# INLINABLE encode #-}
