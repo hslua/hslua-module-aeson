@@ -12,6 +12,7 @@ module Foreign.Lua.Module.Aeson
   ( pushModule
   , decode
   , encode
+  , pushNull
   )
 where
 
